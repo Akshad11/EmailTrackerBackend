@@ -60,7 +60,7 @@ import { TrackerEvent } from './tracker/tracker_event.entity';
           TrackerEvent,
         ],
         synchronize: true,
-        logging: true,
+        logging: false,
       }),
     }),
 
