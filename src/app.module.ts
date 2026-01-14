@@ -36,7 +36,6 @@ import { TrackerEvent } from './tracker/tracker_event.entity';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-      envFilePath: `src/.${process.env.NODE_ENV || 'test'}.env`,
     }),
 
     TypeOrmModule.forRootAsync({
