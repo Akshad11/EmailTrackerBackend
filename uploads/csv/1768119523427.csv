@@ -1,0 +1,4 @@
+email,firstName,lastName,city,source
+john.doe@gmail.com,John,Doe,Mumbai,Website
+jane.smith@gmail.com,Jane,Smith,Bangalore,Ad
+alex.kumar@gmail.com,Alex,Kumar,Pune,Referral
