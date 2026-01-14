@@ -94,8 +94,12 @@ export class TrackerService {
             );
         }
 
-        const openPixel = `
+        let openPixel = `
 <img src="${baseUrl}/tracker/open/${campaign.id}/${campaign.list.id}/${subscriberId}?t=${Date.now()}"
+     width="1" height="1" style="display:none;" />`;
+
+        openPixel = `
+<img src="${baseUrl}/tracker/open/static/img"
      width="1" height="1" style="display:none;" />`;
 
         console.log(openPixel);

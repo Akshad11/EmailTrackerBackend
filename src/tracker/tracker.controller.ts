@@ -114,4 +114,38 @@ export class TrackerController {
         return res.status(200).send(pixel);
     }
 
+    @Get('open/static/img')
+    async trackOpenImg(
+        @Req() req: Request,
+        @Res() res: Response,
+    ) {
+        // DO NOT BLOCK IMAGE RESPONSE
+        let campaignId = "00001";
+        let listId = "0001";
+        let subscriberId = "000001";
+        this.trackerService
+            .saveEvent(req, {
+                campaignId,
+                listId,
+                subscriberId,
+                eventType: 'OPEN',
+            })
+            .catch(() => { });
+
+        console.log("worked");
+        res.setHeader(
+            'Cache-Control',
+            'no-store, no-cache, must-revalidate, proxy-revalidate',
+        );
+        res.setHeader('Pragma', 'no-cache');
+        res.setHeader('Expires', '0');
+        res.setHeader('Content-Type', 'image/gif');
+
+        const pixel = Buffer.from(
+            'R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7',
+            'base64',
+        );
+
+        return res.status(200).send(pixel);
+    }
 }
