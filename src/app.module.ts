@@ -59,8 +59,8 @@ import { TrackerEvent } from './tracker/tracker_event.entity';
           TrackedLink,
           TrackerEvent,
         ],
-        synchronize: config.get('NODE_ENV') !== 'production',
-        logging: config.get('NODE_ENV') === 'development',
+        synchronize: true,
+        logging: true,
       }),
     }),
 
